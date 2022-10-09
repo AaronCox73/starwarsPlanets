@@ -1,6 +1,43 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
-
+@import 'https://fonts.googleapis.com/css?family=Audiowide';
 .row{
-    border: 1px solid;
+
     margin-top: 3px;
 }
+
+h3 {
+    font-family: Audiowide;
+    color: transparent;
+    -webkit-text-stroke: 2px yellow;
+}
+
+img:hover {
+    opacity: .85;
+    transform: scale(1.05);
+    
+}
+
+button {
+    font-family: Audiowide;
+    background-color: yellow;
+    border: none;
+    border-radius: 7%;
+    padding: .7%;
+}
+
+button:hover {
+    opacity: .85;
+    transform: scale(1.05);
+}
+
+p {
+    font-family: Audiowide;
+    color: yellow;
+    color: transparent;
+    -webkit-text-stroke: 1px yellow;
+    font-size: 110%;
+}
+
+
+
+

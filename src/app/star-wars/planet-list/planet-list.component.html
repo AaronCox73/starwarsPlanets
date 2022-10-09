@@ -1,13 +1,25 @@
-<div class="container">
-    <div *ngIf='planets.length'>
-        <div class="row" *ngFor='let planet of planets'>
-            <div class="col-md-6 border">
+<div class="container" *ngIf='planets.length'>
+    <div class="row" *ngFor='let planet of planets'>
+        <div class="col">
+            <a routerLink='/PlanetDetailComponent'>
                 <img src="assets/images/Teth.png" alt="Picture of Planet" [style.width.px]='imageWidth'
                     [style.margin.px]='imageMargin'>
-                <h4>Name: {{planet.name}}</h4>
-                <p>Diameter: {{planet.diameter}}'</p>
+            </a>
+            <h3>Name: {{planet.name}}</h3>
+            <p>Diameter: {{planet.diameter}}'</p>
+        </div>
+        <div class="col">
+            <button (click)='toggleDetail()'>
+                {{showDetail ? 'Hide' : 'Show'}} Details</button>
+            <div *ngIf='showDetail'>
+                <p>Rotation Period: {{planet.rotation_period}} Days</p>
+                <p>Oribital Period: {{planet.orbital_period}} Days</p>
+                <p>Climate: {{planet.climate}}</p>
+                <p>Terrain: {{planet.terrain}}</p>
+                <p>Surface Water: {{planet.surface_water}}</p>
+                <p>Population: {{planet.population}}</p>
             </div>
         </div>
-    </div>
 
+    </div>
 </div>

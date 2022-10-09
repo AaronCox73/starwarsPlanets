@@ -1,9 +1,13 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import 'https://fonts.googleapis.com/css?family=Audiowide';
 
+* {
+
+}
 
 h1 {
-    background-color: black;
-    color: black;
+    font-family: Audiowide;
+    color: transparent;
     font-size: 75px;
     -webkit-text-stroke: 2px yellow;
     margin: 0px;

@@ -18,26 +18,32 @@ export class PlanetListComponent implements OnInit, OnDestroy {
   imageMargin: number = 2;
   errorMessage: string = '';
   sub!: Subscription;
+  showDetail: boolean = false;
 
   planets: IPlanet[] = [
 
   ];
-  
-  
+
+
   constructor(private planetsService: PlanetsService) { }
 
   ngOnInit(): void {
     this.sub = this.planetsService.getPlanets().subscribe({
       next: planets => {
         console.log("list", planets.results)
-        // I F**KING DID IT! WAHOOO 
+
         this.planets = planets.results;
-       
+
       },
       error: err => this.errorMessage = err
     });
 
   }
+
+  toggleDetail(): void {
+    this.showDetail = !this.showDetail;
+  }
+
 
   ngOnDestroy() {
     this.sub.unsubscribe();

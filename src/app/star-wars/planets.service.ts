@@ -13,12 +13,7 @@ export class PlanetsService {
 
   constructor(private http: HttpClient) { }
 
-  // Example on getting planets from swapi api
-  //   this.getPlanets().subscribe((planets: any) => {
-  //     console.log(planets);
-  //   });
-  // }
-
+ // function to get planet results from swapi array
   getPlanets() {
     return this.http.get<any>(this.planetUrl)
       .pipe(
