@@ -1,0 +1,13 @@
+<div class="container">
+    <div *ngIf='planets.length'>
+        <div class="row" *ngFor='let planet of planets'>
+            <div class="col-md-6 border">
+                <img src="assets/images/Teth.png" alt="Picture of Planet" [style.width.px]='imageWidth'
+                    [style.margin.px]='imageMargin'>
+                <h4>Name: {{planet.name}}</h4>
+                <p>Diameter: {{planet.diameter}}'</p>
+            </div>
+        </div>
+    </div>
+
+</div>
