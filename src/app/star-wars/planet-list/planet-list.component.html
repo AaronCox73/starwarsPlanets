@@ -11,7 +11,7 @@
         <div class="col">
             
             <button (click)='hiddenItems[i] = !hiddenItems[i]'> 
-                <!-- {{showDetail ? 'Hide' : 'Show'}}  -->
+                {{hiddenItems[i] ? 'Hide' : 'Show'}} 
                 Details</button>
             <!-- this code will hide the details for each planet
                     but won't toggle the button from code on 13 -->
