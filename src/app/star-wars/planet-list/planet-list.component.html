@@ -1,5 +1,5 @@
 <div class="container" *ngIf='planets.length'>
-    <div class="row" *ngFor='let planet of planets'>
+    <div class="row" *ngFor='let planet of planets; let i = index'>
         <div class="col">
             <a routerLink='/PlanetDetailComponent'>
                 <img src="assets/images/Teth.png" alt="Picture of Planet" [style.width.px]='imageWidth'
@@ -9,8 +9,12 @@
             <p>Diameter: {{planet.diameter}}'</p>
         </div>
         <div class="col">
+            
             <button (click)='toggleDetail()'>
                 {{showDetail ? 'Hide' : 'Show'}} Details</button>
+            <!-- this code will hide the details for each planet
+                    but won't toggle the button from code on 13 -->
+            <!-- <button (click)='hiddenItems[i] = !hiddenItems[i]'>  -->
             <div *ngIf='showDetail'>
                 <p>Rotation Period: {{planet.rotation_period}} Days</p>
                 <p>Oribital Period: {{planet.orbital_period}} Days</p>

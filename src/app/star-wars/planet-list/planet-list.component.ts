@@ -19,10 +19,11 @@ export class PlanetListComponent implements OnInit, OnDestroy {
   errorMessage: string = '';
   sub!: Subscription;
   showDetail: boolean = false;
-
+  hiddenItems: any = {}
   planets: IPlanet[] = [
 
   ];
+
 
 
   constructor(private planetsService: PlanetsService) { }
@@ -43,6 +44,7 @@ export class PlanetListComponent implements OnInit, OnDestroy {
   toggleDetail(): void {
     this.showDetail = !this.showDetail;
   }
+
 
 
   ngOnDestroy() {
