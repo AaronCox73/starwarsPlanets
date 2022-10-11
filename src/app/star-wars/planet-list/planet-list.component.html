@@ -10,12 +10,13 @@
         </div>
         <div class="col">
             
-            <button (click)='toggleDetail()'>
-                {{showDetail ? 'Hide' : 'Show'}} Details</button>
+            <button (click)='hiddenItems[i] = !hiddenItems[i]'> 
+                <!-- {{showDetail ? 'Hide' : 'Show'}}  -->
+                Details</button>
             <!-- this code will hide the details for each planet
                     but won't toggle the button from code on 13 -->
             <!-- <button (click)='hiddenItems[i] = !hiddenItems[i]'>  -->
-            <div *ngIf='showDetail'>
+            <div *ngIf='hiddenItems[i]'>
                 <p>Rotation Period: {{planet.rotation_period}} Days</p>
                 <p>Oribital Period: {{planet.orbital_period}} Days</p>
                 <p>Climate: {{planet.climate}}</p>
