@@ -1,7 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, NgModule, OnDestroy, OnInit } from '@angular/core';
+import { from, Subscription } from 'rxjs';
 import { IPlanet } from '../star-wars.interface'
 import { PlanetsService } from '../planets.service'
+
+
 
 
 @Component({
@@ -12,16 +14,16 @@ import { PlanetsService } from '../planets.service'
 
 
 
+
 export class PlanetListComponent implements OnInit, OnDestroy {
   planetCard: string = 'Planets';
   imageWidth: number = 200;
   imageMargin: number = 2;
   errorMessage: string = '';
   sub!: Subscription;
-  showDetail: boolean = false;
+ 
   hiddenItems: any = {}
   planets: IPlanet[] = [
-
   ];
 
 
@@ -38,12 +40,9 @@ export class PlanetListComponent implements OnInit, OnDestroy {
       },
       error: err => this.errorMessage = err
     });
-
+  
   }
 
-  toggleDetail(): void {
-    this.showDetail = !this.showDetail;
-  }
 
 
 

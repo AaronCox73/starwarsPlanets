@@ -1,7 +1,9 @@
 <div class="container" *ngIf='planets.length'>
-    <div class="row" *ngFor='let planet of planets; let i = index'>
+    <div class="row" *ngFor="let planet of planets; let i = index">
+
+        <!-- add filterObj into line 2 -->
         <div class="col">
-            <a routerLink='/PlanetDetailComponent'>
+            <a onclick="console.log('clicked')" routerLink='/details'>
                 <img src="assets/images/Teth.png" alt="Picture of Planet" [style.width.px]='imageWidth'
                     [style.margin.px]='imageMargin'>
             </a>
@@ -9,13 +11,11 @@
             <p>Diameter: {{planet.diameter}}'</p>
         </div>
         <div class="col">
-            
-            <button (click)='hiddenItems[i] = !hiddenItems[i]'> 
-                {{hiddenItems[i] ? 'Hide' : 'Show'}} 
+            <!-- button below toggles both indiviual planet info and their buttons  -->
+            <button (click)='hiddenItems[i] = !hiddenItems[i]'>
+                {{hiddenItems[i] ? 'Hide' : 'Show'}}
                 Details</button>
-            <!-- this code will hide the details for each planet
-                    but won't toggle the button from code on 13 -->
-            <!-- <button (click)='hiddenItems[i] = !hiddenItems[i]'>  -->
+
             <div *ngIf='hiddenItems[i]'>
                 <p>Rotation Period: {{planet.rotation_period}} Days</p>
                 <p>Oribital Period: {{planet.orbital_period}} Days</p>
