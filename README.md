@@ -1,5 +1,6 @@
 ![eve coding challenge banner](docs/banner.png)
 # Join Eve Financial - the coding challenge
+![Screen Shot 2022-10-21 at 6 30 09 PM](https://user-images.githubusercontent.com/87509934/197308229-9597d5e8-65a6-4507-89e8-76921f460e5e.png)
 
 ## Introduction
 
